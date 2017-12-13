@@ -1,5 +1,9 @@
 package product.stage.pratik.message;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("renderer")
 public class StandardOutMessageRenderer implements MessageRenderer{
 	private MessageProvider messageProvider;
 	
@@ -13,8 +17,10 @@ public class StandardOutMessageRenderer implements MessageRenderer{
 		System.out.println(messageProvider.getMessage());
 	}
 	
-	public void setMessageProvider(MessageProvider provider) {
-		this.messageProvider = provider;
+	
+	@Autowired
+	public void setMessageProvider(MessageProvider mprovider) {
+		this.messageProvider = mprovider;
 	}
 	
 	public MessageProvider getMessageProvider() {
