@@ -13,7 +13,7 @@ public class HWSpringDI {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/app-context.xml");
 		MessageRenderer messageRenderer = ctx.getBean("renderer", MessageRenderer.class);
 		messageRenderer.render();
-		
+		 
 		//GenericXmlApplicationContext for reading annotations
 		GenericXmlApplicationContext gctx = new GenericXmlApplicationContext();
 		gctx.load("classpath:spring/app-context-annotation.xml");

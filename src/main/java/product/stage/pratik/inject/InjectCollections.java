@@ -1,10 +1,14 @@
-package product.stage.pratik;
+package product.stage.pratik.inject;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+import java.util.Map.Entry;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
-import java.util.*;
 
 public class InjectCollections {
-
 	private Map<String, Object> map;
 	private Properties props;
 	private Set set;
@@ -30,19 +34,20 @@ public class InjectCollections {
 	public void display() {
 		
 		System.out.println("Map contents:\n");
-		map.entrySet().stream().forEach(e -> System.out.println(
+		Set<Entry<String, Object>> e = map.entrySet();
+		for(Entry<String, Object> el:e) {
+			System.out.println("Key:"+el.getKey()+", Value:"+el.getValue());
+		}
+		/*
+		.forEach(e -> System.out.println(
 		"Key: " + e.getKey() + " - Value: " + e.getValue()));
 		System.out.println("\nProperties contents:\n");
 		
 		props.entrySet().stream().forEach(e -> System.out.println(
 		"Key: " + e.getKey() + " - Value: " + e.getValue()));
 		System.out.println("\nSet contents:\n");
-		
-		set.forEach(obj -> System.out.println("Value: " + obj));
-		System.out.println("\nList contents:\n");
-		
-		list.forEach(obj -> System.out.println("Value: " + obj));
-	}
+		*/
+		}
 	
 	public static void main(String[] args) {
 		GenericXmlApplicationContext gtx = new GenericXmlApplicationContext();
