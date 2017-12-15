@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>com.test</name>
-	<comment>This project is a simple template for a jar utility using Spring.
-  </comment>
+	<name>SpringDI</name>
+	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
