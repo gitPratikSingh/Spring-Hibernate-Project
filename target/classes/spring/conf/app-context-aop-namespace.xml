@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd ">
+
+	<description>Spring AOP</description>
+
+	<aop:config>
+		<aop:pointcut id="pointcut" expression="execution(* spring.com.aop..sing*(int))" />
+		<aop:aspect ref="advice">
+			<aop:before method ="simpleBeforeAdvice" pointcut-ref="pointcut"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id = "advice" class="spring.com.aop.AOPAdvice"/>
+	<bean id = "singer" class="spring.com.aop.Singer"/>
+	<bean id = "cast" class="spring.com.aop.CastForAOP" p:singer-ref="singer"/>	
+	
+</beans>
