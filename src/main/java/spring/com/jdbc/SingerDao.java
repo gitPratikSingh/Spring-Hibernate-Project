@@ -5,8 +5,8 @@ import java.util.*;
 public interface SingerDao {
 	List<Singer> findAll();
 	List<Singer> firstByFirstName();
-	String findFirsttNameById(String firstName);
-	String findLastNameById(String lastName);
+	String findFirsttNameById(Long id);
+	String findLastNameById(Long id);
 	
 	void insert(Singer singer);
 	void update(Singer singer);

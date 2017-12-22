@@ -85,17 +85,6 @@ public class PlainSingerDao implements SingerDao {
 		return null;
 	}
 
-	@Override
-	public String findFirsttNameById(String firstName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String findLastNameById(String lastName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void insert(Singer singer) {
@@ -194,5 +183,17 @@ public class PlainSingerDao implements SingerDao {
 			for (Singer singer: singers) {
 					logger.info(singer.toString());
 			}
+		}
+
+		@Override
+		public String findFirsttNameById(Long id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public String findLastNameById(Long id) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 }
