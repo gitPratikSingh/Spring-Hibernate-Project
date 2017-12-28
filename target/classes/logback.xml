@@ -21,7 +21,7 @@
 	
 	<logger name="org.springframework.jdbc" level="debug"/>
 	
-	<root level="INFO">
+	<root level="TRACE">
 		<appender-ref ref="fileAppender" />
 		<appender-ref ref="STDOUT" />
 	</root>
