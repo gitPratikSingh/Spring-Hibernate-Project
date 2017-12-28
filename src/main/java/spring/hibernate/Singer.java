@@ -10,6 +10,20 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "singer")
+@NamedQueries({ 
+		
+		@NamedQuery(name="Singer.findById", 
+			query="Select distinct s from Singer s "
+					  		+ "left join fetch s.albums a "
+					  		+ "left join fetch s.instruments i "
+					  		+ "where s.id = :Id"),
+		@NamedQuery(name="Singer.findAllWithAlbum",
+			query="select distinct s from Singer s " +
+			"left join fetch s.albums a " +
+			"left join fetch s.instruments i")
+			
+})
+
 public class Singer implements Serializable {
 	private Long id;
 	private String first_name;
@@ -43,7 +57,7 @@ public class Singer implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name="id")
+	@Column(name="id", columnDefinition="serial")
 	public Long getId() {
 		return id;
 	}
@@ -89,5 +103,9 @@ public class Singer implements Serializable {
 		return "Singer - Id: " + id + ", First name: " + first_name
 				+ ", Last name: " + last_name + ", Birthday: " + birth_date;
 		}
+
+	public void addAbum(Album album) {
+		this.albums.add(album);
+	}
 	
 }

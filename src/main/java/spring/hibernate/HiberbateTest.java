@@ -14,8 +14,10 @@ public class HiberbateTest {
 	public static void main(String[] args) {
 		GenericApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		SingerDao singerDao = ctx.getBean(SingerDao.class);
-		listSingers(singerDao.findAll());
+		//listSingers(singerDao.findAll());
 		
+		Singer s = singerDao.findById(1L);
+		System.out.println(s.getFirst_name() + " "+ s.getLast_name());
 		ctx.close();
 	}
 

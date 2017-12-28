@@ -19,7 +19,7 @@ public class Album implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=IDENTITY)
-	@Column(name="id")
+	@Column(name="id", columnDefinition="serial")
 	public Long getId() {
 		return id;
 	}
