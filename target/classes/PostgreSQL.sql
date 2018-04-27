@@ -1,3 +1,4 @@
+// Added Schema files
 DROP TABLE IF EXISTS "MusicSchema"."Album";
 DROP TABLE IF EXISTS "MusicSchema"."Singer";
 
