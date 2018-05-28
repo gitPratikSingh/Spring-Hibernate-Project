@@ -13,7 +13,6 @@ public class ConfigurableSpringDI {
 		MessageRenderer messageRenderer = ctx.getBean("renderer", MessageRenderer.class);
 		messageRenderer.render();
 		
-		
 	}
 
 }
